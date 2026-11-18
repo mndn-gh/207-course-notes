@@ -26,4 +26,24 @@ interface Chargeable {
 '       (with their fields and methods), then add the arrows between all four
 '       types.
 
+abstract class Vehicle {
+  # make: String
+  + {abstract} max_speed() : int
+}
+
+class Car {
+  + max_speed() : int
+}
+
+Vehicle <|-- Car
+
+class ElectricCar {
+  - battery_level : int
+  + max_speed() : int
+  + charge() : void
+}
+
+Car <|-- ElectricCar
+Chargeable <|.. ElectricCar
+
 @enduml
