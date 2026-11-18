@@ -19,33 +19,27 @@ hide empty members
 ' (Putting the parent/interface on the LEFT of the arrow keeps it on top.)
 
 interface Chargeable {
-  + charge(): void
+  + charge() : void
 }
 
 abstract class Vehicle {
   # make : String
-
-  + Vehicle(make: String)
-
-  + maxSpeed(): int
+  + Vehicle(make : String)
+  + {abstract} maxSpeed() : int
 }
 
 class Car {
-  + Car(make: String)
-
-  + maxSpeed(): int
+  + Car(make : String)
+  + maxSpeed() : int
 }
 
 Vehicle <|-- Car
 
 class ElectricCar {
-  - batteryLevel: int
-
-  + ElectricCar(make: String)
-
-  + maxSpeed(): int
-
-  + charge(): void
+  - batteryLevel : int
+  + ElectricCar(make : String)
+  + maxSpeed() : int
+  + charge() : void
 }
 
 Car <|-- ElectricCar
